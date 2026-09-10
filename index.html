@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Listening samples for UNISE: unified noise-invariant learning for speech enhancement toward improved content preservation.">
+<title>UNISE Listening Samples</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{
+  --paper:#f6f7f9; --card:#ffffff; --ink:#15181f; --dim:#5c6472; --line:#dfe3e9;
+  --accent:#0e9384; --accent-soft:#e2f4f1;
+  --good:#2f7d5f; --good-bg:#e7f3ec; --warn:#8a6516; --warn-bg:#f7efdf; --poor:#b04a3f; --poor-bg:#f9e9e6;
+  --sans:"IBM Plex Sans",system-ui,sans-serif; --serif:"Source Serif 4",Georgia,serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0f1216; --card:#171b22; --ink:#e6e9ee; --dim:#98a2b3; --line:#262c36;
+  --accent:#3fc9b8; --accent-soft:#123430;
+  --good:#6ec99b; --good-bg:#13291f; --warn:#d6ab5c; --warn-bg:#2b2314; --poor:#e08878; --poor-bg:#2e1a17;
+}}
+:root[data-theme="dark"]{
+  --paper:#0f1216; --card:#171b22; --ink:#e6e9ee; --dim:#98a2b3; --line:#262c36;
+  --accent:#3fc9b8; --accent-soft:#123430;
+  --good:#6ec99b; --good-bg:#13291f; --warn:#d6ab5c; --warn-bg:#2b2314; --poor:#e08878; --poor-bg:#2e1a17;
+}
+*{box-sizing:border-box}
+img{max-width:100%}
+html{color-scheme:light dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);margin:0;
+  padding:clamp(20px,4vw,52px) clamp(16px,4vw,28px);line-height:1.55;-webkit-font-smoothing:antialiased}
+main{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+h1{font-size:clamp(1.35rem,3.4vw,1.9rem);font-weight:600;margin:0;letter-spacing:-.015em;text-wrap:balance}
+.sub{color:var(--dim);margin:0;max-width:64ch;font-size:.95rem}
+.venue{font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.stats{display:flex;flex-wrap:wrap;gap:8px}
+.stat{flex:1 1 130px;background:var(--card);border:1px solid var(--line);border-radius:7px;padding:11px 13px;
+  display:flex;flex-direction:column;gap:2px}
+.stat.ours{border-color:var(--accent);background:var(--accent-soft)}
+.sv{font-family:var(--mono);font-size:1.28rem;font-variant-numeric:tabular-nums}
+.sv i{font-style:normal;font-size:.72rem;color:var(--dim);margin-left:1px}
+.sl{font-size:.76rem;color:var(--dim)}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:0 7px 7px 0;padding:13px 16px;font-size:.87rem;color:var(--dim)}
+.note b{color:var(--ink);font-weight:600}
+.cards{display:flex;flex-direction:column;gap:9px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card[open]{border-color:var(--accent)}
+summary{cursor:pointer;padding:13px 16px;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.uid{font-family:var(--mono);font-size:.83rem;color:var(--accent);font-weight:500}
+.tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--accent-soft);color:var(--accent);padding:2px 7px;border-radius:3px}
+.ref{font-family:var(--serif);font-size:.97rem;color:var(--dim);flex:1 1 100%}
+.card[open] .ref{color:var(--ink)}
+.panels{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:14px 16px 16px;
+  border-top:1px solid var(--line);background:var(--paper)}
+.panel{margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+.panel.ours .pl{color:var(--accent)}
+.pl{font-size:.76rem;font-weight:600;color:var(--dim);letter-spacing:.01em}
+.panel img{width:100%;height:auto;display:block;border-radius:4px;border:1px solid var(--line)}
+.panel.ours img{border-color:var(--accent)}
+.ht{font-family:var(--serif);font-size:.82rem;line-height:1.38;color:var(--dim);margin:0;
+  hyphens:auto;overflow-wrap:break-word}
+.panel.ours .ht{color:var(--ink)}
+.m{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:0;text-align:center}
+.m div{display:flex;flex-direction:column;gap:1px;padding:3px 0;border-radius:3px;background:var(--paper)}
+.panel.ours .m div{background:transparent}
+.m dt{font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+.m dd{margin:0;font-family:var(--mono);font-size:.78rem;font-variant-numeric:tabular-nums;color:var(--ink)}
+audio{width:100%;height:30px;margin-top:auto}
+@media (max-width:900px){.panels{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.panels{grid-template-columns:1fr}}
+footer a{color:var(--accent)}
+footer{color:var(--dim);font-size:.8rem;border-top:1px solid var(--line);padding-top:16px}
+.spec{margin:0;padding:14px 16px 16px;border-top:1px solid var(--line);background:var(--paper)}
+.spec img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:5px;background:#fff}
+.spec figcaption{font-size:.75rem;color:var(--dim);margin:7px 0 0}
+.hyps{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:1px}
+.hyps li{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;align-items:baseline;
+  padding:6px 8px;border-radius:4px}
+.hyps li.ours{background:var(--accent-soft)}
+.hl{font-size:.79rem;font-weight:600;color:var(--dim)}
+.hyps li.ours .hl{color:var(--accent)}
+.ht{font-family:var(--serif);font-size:.92rem;color:var(--ink)}
+@media (max-width:620px){.hyps li{grid-template-columns:1fr;gap:2px}}
+@media (max-width:620px){
+  .row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <p class="venue">ICASSP 2027 &middot; submission</p>
+  <h1>UNISE: Unified Noise-Invariant Learning for Speech Enhancement toward Improved Content Preservation</h1>
+  <p class="sub">18 VoiceBank&ndash;DEMAND utterances, five systems each.</p>
+</header>
+<section class="cards"><details class="card" open>
+<summary><span class="uid">p237-239</span><span class="ref">The way he took his second goal was brilliant.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p237-239" src="assets/spec/clean_p237-239.jpg">
+<p class="ht">The way he took his second goal was brilliant.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.16</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p237-239.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p237-239" src="assets/spec/noisy_p237-239.jpg">
+<p class="ht">The way he took the second goal was brilliant.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.09</dd></div><div><dt>WER</dt><dd>11%</dd></div><div><dt>Spk</dt><dd>0.80</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p237-239.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p237-239" src="assets/spec/sgmse_p237-239.jpg">
+<p class="ht">The way he took Fu&#x27;s second bullet here, Brewer,</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.19</dd></div><div><dt>WER</dt><dd>33%</dd></div><div><dt>Spk</dt><dd>0.73</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p237-239.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p237-239" src="assets/spec/ditse_p237-239.jpg">
+<p class="ht">away he took his second old, his bruit.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.41</dd></div><div><dt>WER</dt><dd>33%</dd></div><div><dt>Spk</dt><dd>0.69</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p237-239.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p237-239" src="assets/spec/unise_p237-239.jpg">
+<p class="ht">The way he took the second door was brilliant.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.22</dd></div><div><dt>WER</dt><dd>22%</dd></div><div><dt>Spk</dt><dd>0.63</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p237-239.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p241-332</span><span class="ref">They should stop the bombing.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p241-332" src="assets/spec/clean_p241-332.jpg">
+<p class="ht">They should stop the bombing.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.96</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p241-332.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p241-332" src="assets/spec/noisy_p241-332.jpg">
+<p class="ht">They should stop the bombing.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.29</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.90</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p241-332.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p241-332" src="assets/spec/sgmse_p241-332.jpg">
+<p class="ht">They should stop the bombing.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.49</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.75</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p241-332.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p241-332" src="assets/spec/ditse_p241-332.jpg">
+<p class="ht">Bush stopped the bombing.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.85</dd></div><div><dt>WER</dt><dd>60%</dd></div><div><dt>Spk</dt><dd>0.71</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p241-332.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p241-332" src="assets/spec/unise_p241-332.jpg">
+<p class="ht">They should stop the bombing.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.95</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.76</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p241-332.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p248-357</span><span class="ref">Who was the mystery MP?</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p248-357" src="assets/spec/clean_p248-357.jpg">
+<p class="ht">Who was the mystery MP?</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.31</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p248-357.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p248-357" src="assets/spec/noisy_p248-357.jpg">
+<p class="ht">Who was in this VM?</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.21</dd></div><div><dt>WER</dt><dd>80%</dd></div><div><dt>Spk</dt><dd>0.80</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p248-357.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p248-357" src="assets/spec/sgmse_p248-357.jpg">
+<p class="ht">Who was the Mr. B.M. Leanfield?</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.42</dd></div><div><dt>WER</dt><dd>80%</dd></div><div><dt>Spk</dt><dd>0.74</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p248-357.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p248-357" src="assets/spec/ditse_p248-357.jpg">
+<p class="ht">Who was the Miss BMD?</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.85</dd></div><div><dt>WER</dt><dd>40%</dd></div><div><dt>Spk</dt><dd>0.61</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p248-357.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p248-357" src="assets/spec/unise_p248-357.jpg">
+<p class="ht">Who was the mystery employee?</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.90</dd></div><div><dt>WER</dt><dd>20%</dd></div><div><dt>Spk</dt><dd>0.70</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p248-357.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p251-129</span><span class="ref">It was the same at Twickenham.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p251-129" src="assets/spec/clean_p251-129.jpg">
+<p class="ht">It was the same at Twickenham.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.27</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p251-129.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p251-129" src="assets/spec/noisy_p251-129.jpg">
+<p class="ht">It was the same at Twickenham.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.91</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.94</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p251-129.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p251-129" src="assets/spec/sgmse_p251-129.jpg">
+<p class="ht">It was the same at Twickenham.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.26</dd></div><div><dt>WER</dt><dd>17%</dd></div><div><dt>Spk</dt><dd>0.82</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p251-129.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p251-129" src="assets/spec/ditse_p251-129.jpg">
+<p class="ht">It was the same at Tweek and Hamp.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.36</dd></div><div><dt>WER</dt><dd>50%</dd></div><div><dt>Spk</dt><dd>0.81</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p251-129.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p251-129" src="assets/spec/unise_p251-129.jpg">
+<p class="ht">It was the same at tweak and hand.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.73</dd></div><div><dt>WER</dt><dd>50%</dd></div><div><dt>Spk</dt><dd>0.87</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p251-129.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p251-272</span><span class="ref">So, in a sense, it was a government subsidy.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p251-272" src="assets/spec/clean_p251-272.jpg">
+<p class="ht">So, in a sense, it was a government subsidy.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.14</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p251-272.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p251-272" src="assets/spec/noisy_p251-272.jpg">
+<p class="ht">So, in a sense, it was a government subsidy.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.20</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.79</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p251-272.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p251-272" src="assets/spec/sgmse_p251-272.jpg">
+<p class="ht">So, Kleenex says, was it Dolman or Sabine?</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.28</dd></div><div><dt>WER</dt><dd>78%</dd></div><div><dt>Spk</dt><dd>0.69</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p251-272.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p251-272" src="assets/spec/ditse_p251-272.jpg">
+<p class="ht">So, in a sense, it was a government subsidy.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.37</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.67</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p251-272.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p251-272" src="assets/spec/unise_p251-272.jpg">
+<p class="ht">So, in a sense, it was a government subsidy.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.79</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.72</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p251-272.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p255-007</span><span class="ref">The rainbow is a division of white light into many beautiful colors.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p255-007" src="assets/spec/clean_p255-007.jpg">
+<p class="ht">The rainbow is a division of white light into many beautiful colours.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.20</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p255-007.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p255-007" src="assets/spec/noisy_p255-007.jpg">
+<p class="ht">The rainbow is a division of white light into many beautiful colors.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.16</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.95</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p255-007.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p255-007" src="assets/spec/sgmse_p255-007.jpg">
+<p class="ht">The rainbow is a division of white light into many beautiful colours.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.32</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.93</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p255-007.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p255-007" src="assets/spec/ditse_p255-007.jpg">
+<p class="ht">The rainbow is a division of white light into many beautiful colors.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.34</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.80</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p255-007.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p255-007" src="assets/spec/unise_p255-007.jpg">
+<p class="ht">The rainbow is a division of white light into many beautiful colours.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.16</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.88</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p255-007.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p281-348</span><span class="ref">Hopefully, it will come from someone on our side.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p281-348" src="assets/spec/clean_p281-348.jpg">
+<p class="ht">Hopefully it will come from someone on our side.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.14</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p281-348.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p281-348" src="assets/spec/noisy_p281-348.jpg">
+<p class="ht">hopefully it will come from someone on our side</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.34</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.93</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p281-348.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p281-348" src="assets/spec/sgmse_p281-348.jpg">
+<p class="ht">Hopefully, it will come from someone on our side.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.42</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.89</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p281-348.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p281-348" src="assets/spec/ditse_p281-348.jpg">
+<p class="ht">Hopefully, they will come from someone on our side.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.43</dd></div><div><dt>WER</dt><dd>11%</dd></div><div><dt>Spk</dt><dd>0.78</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p281-348.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p281-348" src="assets/spec/unise_p281-348.jpg">
+<p class="ht">Hopefully it will come from someone on our side.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.87</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.91</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p281-348.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p283-185</span><span class="ref">He was in great spirits.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p283-185" src="assets/spec/clean_p283-185.jpg">
+<p class="ht">He was in great spirits.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.73</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p283-185.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p283-185" src="assets/spec/noisy_p283-185.jpg">
+<p class="ht">He was in great spirits.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.95</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.93</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p283-185.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p283-185" src="assets/spec/sgmse_p283-185.jpg">
+<p class="ht">He wasn&#x27;t great for it.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.70</dd></div><div><dt>WER</dt><dd>20%</dd></div><div><dt>Spk</dt><dd>0.84</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p283-185.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p283-185" src="assets/spec/ditse_p283-185.jpg">
+<p class="ht">He was in great spirits.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.99</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.83</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p283-185.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p283-185" src="assets/spec/unise_p283-185.jpg">
+<p class="ht">He was in great spirits.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.38</dd></div><div><dt>WER</dt><dd>20%</dd></div><div><dt>Spk</dt><dd>0.91</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p283-185.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p295-009</span><span class="ref">There is , according to legend, a boiling pot of gold at one end.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p295-009" src="assets/spec/clean_p295-009.jpg">
+<p class="ht">There is, according to legend, a boiling pot of gold at one end.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.27</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p295-009.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p295-009" src="assets/spec/noisy_p295-009.jpg">
+<p class="ht">There is, according to legend, a boiling pot of gold in the sand.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.13</dd></div><div><dt>WER</dt><dd>23%</dd></div><div><dt>Spk</dt><dd>0.88</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p295-009.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p295-009" src="assets/spec/sgmse_p295-009.jpg">
+<p class="ht">That&#x27;s the end of the story. According to legend, a broiling prince of Bel- Rafe, we broke.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.25</dd></div><div><dt>WER</dt><dd>46%</dd></div><div><dt>Spk</dt><dd>0.84</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p295-009.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p295-009" src="assets/spec/ditse_p295-009.jpg">
+<p class="ht">There is, according to legend, a boiling pot of gold around.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.46</dd></div><div><dt>WER</dt><dd>23%</dd></div><div><dt>Spk</dt><dd>0.78</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p295-009.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p295-009" src="assets/spec/unise_p295-009.jpg">
+<p class="ht">There is, according to legend, a boiling pot of girls of the land.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.10</dd></div><div><dt>WER</dt><dd>31%</dd></div><div><dt>Spk</dt><dd>0.90</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p295-009.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p303-068</span><span class="ref">Some people still think she should be English.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p303-068" src="assets/spec/clean_p303-068.jpg">
+<p class="ht">Some people still think she should be English.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.32</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p303-068.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p303-068" src="assets/spec/noisy_p303-068.jpg">
+<p class="ht">Some people still think she should be English.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.39</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.89</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p303-068.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p303-068" src="assets/spec/sgmse_p303-068.jpg">
+<p class="ht">And Faw still thinks she should be ang- Sh- Ah.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.94</dd></div><div><dt>WER</dt><dd>38%</dd></div><div><dt>Spk</dt><dd>0.74</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p303-068.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p303-068" src="assets/spec/ditse_p303-068.jpg">
+<p class="ht">Some people still think she should be English.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.66</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.67</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p303-068.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p303-068" src="assets/spec/unise_p303-068.jpg">
+<p class="ht">Some people still think she should be English.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.29</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.71</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p303-068.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p312-289</span><span class="ref">Who will take them after that?</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p312-289" src="assets/spec/clean_p312-289.jpg">
+<p class="ht">Who will take them after that?</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.67</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p312-289.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p312-289" src="assets/spec/noisy_p312-289.jpg">
+<p class="ht">We will take them after that.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.16</dd></div><div><dt>WER</dt><dd>17%</dd></div><div><dt>Spk</dt><dd>0.87</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p312-289.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p312-289" src="assets/spec/sgmse_p312-289.jpg">
+<p class="ht">We will take them after that.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.97</dd></div><div><dt>WER</dt><dd>17%</dd></div><div><dt>Spk</dt><dd>0.90</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p312-289.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p312-289" src="assets/spec/ditse_p312-289.jpg">
+<p class="ht">We will take them after that.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.94</dd></div><div><dt>WER</dt><dd>17%</dd></div><div><dt>Spk</dt><dd>0.74</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p312-289.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p312-289" src="assets/spec/unise_p312-289.jpg">
+<p class="ht">We will take them after that.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.67</dd></div><div><dt>WER</dt><dd>17%</dd></div><div><dt>Spk</dt><dd>0.76</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p312-289.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p334-033</span><span class="ref">I don&#x27;t know why you say goodbye.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p334-033" src="assets/spec/clean_p334-033.jpg">
+<p class="ht">I don&#x27;t know why you say goodbye.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.23</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p334-033.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p334-033" src="assets/spec/noisy_p334-033.jpg">
+<p class="ht">I don&#x27;t know why you say goodbye.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.73</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.96</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p334-033.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p334-033" src="assets/spec/sgmse_p334-033.jpg">
+<p class="ht">I don&#x27;t know why you say goodbye.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.39</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.94</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p334-033.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p334-033" src="assets/spec/ditse_p334-033.jpg">
+<p class="ht">I don&#x27;t know why you said goodbye.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.35</dd></div><div><dt>WER</dt><dd>12%</dd></div><div><dt>Spk</dt><dd>0.81</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p334-033.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p334-033" src="assets/spec/unise_p334-033.jpg">
+<p class="ht">I don&#x27;t know why you say goodbye.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.21</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.85</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p334-033.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p339-032</span><span class="ref">Like his acting, it was an accident.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p339-032" src="assets/spec/clean_p339-032.jpg">
+<p class="ht">Like his acting, it was an accident.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.24</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p339-032.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p339-032" src="assets/spec/noisy_p339-032.jpg">
+<p class="ht">Like his acting, it was an accident.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.79</dd></div><div><dt>WER</dt><dd>29%</dd></div><div><dt>Spk</dt><dd>0.71</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p339-032.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p339-032" src="assets/spec/sgmse_p339-032.jpg">
+<p class="ht">like an acting with an accident.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.59</dd></div><div><dt>WER</dt><dd>43%</dd></div><div><dt>Spk</dt><dd>0.67</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p339-032.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p339-032" src="assets/spec/ditse_p339-032.jpg">
+<p class="ht">Like is acting, it was an accident.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.34</dd></div><div><dt>WER</dt><dd>29%</dd></div><div><dt>Spk</dt><dd>0.66</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p339-032.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p339-032" src="assets/spec/unise_p339-032.jpg">
+<p class="ht">Like his acting, it was an accident.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.18</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.72</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p339-032.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p360-108</span><span class="ref">We opened up and everything was gone.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p360-108" src="assets/spec/clean_p360-108.jpg">
+<p class="ht">We opened up and everything was gone.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.18</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p360-108.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p360-108" src="assets/spec/noisy_p360-108.jpg">
+<p class="ht">We opened up and everything was calm.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.15</dd></div><div><dt>WER</dt><dd>43%</dd></div><div><dt>Spk</dt><dd>0.90</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p360-108.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p360-108" src="assets/spec/sgmse_p360-108.jpg">
+<p class="ht">We opened up and everything spun.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.00</dd></div><div><dt>WER</dt><dd>29%</dd></div><div><dt>Spk</dt><dd>0.81</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p360-108.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p360-108" src="assets/spec/ditse_p360-108.jpg">
+<p class="ht">He opens up and everything was gone.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.31</dd></div><div><dt>WER</dt><dd>29%</dd></div><div><dt>Spk</dt><dd>0.74</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p360-108.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p360-108" src="assets/spec/unise_p360-108.jpg">
+<p class="ht">We opened up and everything was gone.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.97</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.77</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p360-108.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p361-214</span><span class="ref">The squad is too small.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p361-214" src="assets/spec/clean_p361-214.jpg">
+<p class="ht">The squat is too small.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.00</dd></div><div><dt>WER</dt><dd>20%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p361-214.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p361-214" src="assets/spec/noisy_p361-214.jpg">
+<p class="ht">The squat is too small.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.45</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.98</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p361-214.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p361-214" src="assets/spec/sgmse_p361-214.jpg">
+<p class="ht">The squat is too small.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.92</dd></div><div><dt>WER</dt><dd>20%</dd></div><div><dt>Spk</dt><dd>0.97</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p361-214.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p361-214" src="assets/spec/ditse_p361-214.jpg">
+<p class="ht">The squad is too small.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.17</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.84</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p361-214.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p361-214" src="assets/spec/unise_p361-214.jpg">
+<p class="ht">The squat is too small.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.98</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.93</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p361-214.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p363-422</span><span class="ref">Hopefully, the answer is in the positive.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p363-422" src="assets/spec/clean_p363-422.jpg">
+<p class="ht">Hopefully the answer is in the positive.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.57</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p363-422.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p363-422" src="assets/spec/noisy_p363-422.jpg">
+<p class="ht">Hopefully the answer is in the positive.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.37</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.96</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p363-422.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p363-422" src="assets/spec/sgmse_p363-422.jpg">
+<p class="ht">Hopefully, the answer is in the positive.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.03</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.96</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p363-422.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p363-422" src="assets/spec/ditse_p363-422.jpg">
+<p class="ht">Hopefully, the answer is in the positive.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.73</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.81</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p363-422.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p363-422" src="assets/spec/unise_p363-422.jpg">
+<p class="ht">Hopefully the answer is in the positive.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.54</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.91</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p363-422.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p364-160</span><span class="ref">He has gone back to school.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p364-160" src="assets/spec/clean_p364-160.jpg">
+<p class="ht">He has gone back to school.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.94</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p364-160.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p364-160" src="assets/spec/noisy_p364-160.jpg">
+<p class="ht">He has gone back to school.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>1.79</dd></div><div><dt>WER</dt><dd>17%</dd></div><div><dt>Spk</dt><dd>0.91</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p364-160.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p364-160" src="assets/spec/sgmse_p364-160.jpg">
+<p class="ht">He has gone back to school.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.29</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.86</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p364-160.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p364-160" src="assets/spec/ditse_p364-160.jpg">
+<p class="ht">He has gone back to Spill.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.33</dd></div><div><dt>WER</dt><dd>33%</dd></div><div><dt>Spk</dt><dd>0.69</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p364-160.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p364-160" src="assets/spec/unise_p364-160.jpg">
+<p class="ht">He has gone back to school.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.00</dd></div><div><dt>WER</dt><dd>0%</dd></div><div><dt>Spk</dt><dd>0.86</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p364-160.mp3"></audio>
+</figure></div>
+</details><details class="card">
+<summary><span class="uid">p376-033</span><span class="ref">We are doing well.</span></summary>
+<div class="panels"><figure class="panel">
+<figcaption class="pl">Clean</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Clean, p376-033" src="assets/spec/clean_p376-033.jpg">
+<p class="ht">because we do not need it.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.13</dd></div><div><dt>WER</dt><dd>125%</dd></div><div><dt>Spk</dt><dd>1.00</dd></div></dl>
+<audio controls preload="none" src="assets/audio/clean_p376-033.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">Noisy</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, Noisy, p376-033" src="assets/spec/noisy_p376-033.jpg">
+<p class="ht">because we do not need it.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.54</dd></div><div><dt>WER</dt><dd>125%</dd></div><div><dt>Spk</dt><dd>0.94</dd></div></dl>
+<audio controls preload="none" src="assets/audio/noisy_p376-033.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">SGMSE+</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, SGMSE+, p376-033" src="assets/spec/sgmse_p376-033.jpg">
+<p class="ht">because we do not need it.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.05</dd></div><div><dt>WER</dt><dd>125%</dd></div><div><dt>Spk</dt><dd>0.90</dd></div></dl>
+<audio controls preload="none" src="assets/audio/sgmse_p376-033.mp3"></audio>
+</figure><figure class="panel">
+<figcaption class="pl">DiTSE</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, DiTSE, p376-033" src="assets/spec/ditse_p376-033.jpg">
+<p class="ht">because we did not need it.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>3.18</dd></div><div><dt>WER</dt><dd>125%</dd></div><div><dt>Spk</dt><dd>0.83</dd></div></dl>
+<audio controls preload="none" src="assets/audio/ditse_p376-033.mp3"></audio>
+</figure><figure class="panel ours">
+<figcaption class="pl">UNISE (Ours)</figcaption>
+<img loading="lazy" width="450" height="325" alt="Mel spectrogram, UNISE (Ours), p376-033" src="assets/spec/unise_p376-033.jpg">
+<p class="ht">because we do not need it.</p>
+<dl class="m"><div><dt>DNSMOS</dt><dd>2.97</dd></div><div><dt>WER</dt><dd>125%</dd></div><div><dt>Spk</dt><dd>0.87</dd></div></dl>
+<audio controls preload="none" src="assets/audio/unise_p376-033.mp3"></audio>
+</figure></div>
+</details></section>
+<footer>Clips are cropped to the speech region of the clean reference. DNSMOS, WER (Whisper&nbsp;large-v3 against the VCTK text) and speaker similarity are measured per clip. SGMSE+ and DiTSE are the released samples from the <a href="http://hguimaraes.me/DiTSE/">DiTSE demo page</a>.</footer>
+</main>
+</body>
+</html>
